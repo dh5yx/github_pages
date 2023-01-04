@@ -4,7 +4,7 @@
       <!-- 订单顶部 -->
       <div class="order-header">
         <img src="../assets/shop-logo.png" alt="" class="shop-logo" />
-        <p class="shop-name">会员购</p>
+        <p class="shop-name">会员购1</p>
         <p class="order-text">已付定金￥14.85元，预计2021.01出荷</p>
       </div>
       <!-- 订单内容 -->
