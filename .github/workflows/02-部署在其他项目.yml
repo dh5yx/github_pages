@@ -1,0 +1,27 @@
+# 以下以一个构建vue项目的yml文件为例子
+name: CI 
+on:
+  push:
+    branches:
+      - main # 这里只配置了main分支，所以只有推送main分支才会触发以下任务
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # 运行环境
+    steps:
+      # 将代码拉取到虚拟机
+      - name: Checkout  ️ 
+        uses: actions/checkout@v3 # 使用第三方action
+
+      # 安装依赖、打包，如果提前已打包好无需这一步
+      - name: Install and Build   
+        run: |
+          npm install
+          npm run build
+          
+      # 部署
+      - name: Deploy   
+        uses: JamesIves/github-pages-deploy-action@v4.3.3 # 使用第三方action
+        with: # 基于第三方action 的一些配置
+          branch: gh-pages # 部署后提交到那个分支
+          folder: dist # 这里填打包好的目录名称
+          repository-name: dh5yx/dh5yx.github.io
