@@ -6,18 +6,21 @@ on:
       - main # 这里只配置了main分支，所以只有推送main分支才会触发以下任务
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # 运行环境
     steps:
-      - name: Checkout  ️ # 将代码拉取到虚拟机
-        uses: actions/checkout@v3
+      # 将代码拉取到虚拟机
+      - name: Checkout  ️ 
+        uses: actions/checkout@v3 # 使用第三方action
 
-      - name: Install and Build   # 安装依赖、打包，如果提前已打包好无需这一步
+      # 安装依赖、打包，如果提前已打包好无需这一步
+      - name: Install and Build   
         run: |
           npm install
           npm run build
-
-      - name: Deploy   # 部署
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
-        with:
+          
+      # 部署
+      - name: Deploy   
+        uses: JamesIves/github-pages-deploy-action@v4.3.3 # 使用第三方action
+        with: # 基于第三方action 的一些配置
           branch: gh-pages # 部署后提交到那个分支
           folder: dist # 这里填打包好的目录名称
