@@ -16,6 +16,7 @@ jobs:
       # 安装依赖、打包，如果提前已打包好无需这一步
       - name: Install and Build # 步骤名字随意
         run: | 
+          echo hello world
           npm install
           npm run build
 
