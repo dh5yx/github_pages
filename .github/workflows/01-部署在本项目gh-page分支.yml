@@ -14,10 +14,10 @@ jobs:
         uses: actions/checkout@v3 # 使用第三方action#，将代码拉取到虚拟机
 
       # 安装依赖、打包，如果提前已打包好无需这一步
-      # - name: Install and Build # 步骤名字随意
-      #   run: | 
-      #     npm install
-      #     npm run build
+      - name: Install and Build # 步骤名字随意
+        run: | 
+          npm install
+          npm run build
 
       # 部署
       - name: Deploy # 步骤名字随意
