@@ -1,5 +1,5 @@
 name: CI # 工作流的名称，随意
-run-name: run CI # 工作流生成的工作流运行的名称,缺省时为commit信息，不必须
+run-name: run CI dh5yx.github.io # 工作流生成的工作流运行的名称,缺省时为commit信息，不必须
 on: # 触发条件
   push:
     branches:
