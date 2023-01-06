@@ -1,25 +1,25 @@
-# 以下以一个构建vue项目的yml文件为例子
-name: CI 
-on:
+name: CI # 工作流的名称，随意
+run-name: run CI # 工作流生成的工作流运行的名称,缺省时为commit信息
+on: # 触发条件
   push:
     branches:
       - main # 这里只配置了main分支，所以只有推送main分支才会触发以下任务
 jobs:
-  build-and-deploy:
+  build-and-deploy: # 任务名字随意
     runs-on: ubuntu-latest # 运行环境
     steps:
       # 将代码拉取到虚拟机
-      - name: Checkout  ️ 
+      - name: Checkout  ️ # 步骤名字随意
         uses: actions/checkout@v3 # 使用第三方action
 
       # 安装依赖、打包，如果提前已打包好无需这一步
-      - name: Install and Build   
-        run: |
+      - name: Install and Build # 步骤名字随意
+        run: | 
           npm install
           npm run build
-          
+
       # 部署
-      - name: Deploy   
+      - name: Deploy # 步骤名字随意
         uses: JamesIves/github-pages-deploy-action@v4.3.3 # 使用第三方action
         with: # 基于第三方action 的一些配置
           branch: gh-pages # 部署后提交到那个分支
