@@ -9,6 +9,7 @@ on: # 触发条件
 jobs:
   build-and-deploy: # 任务名字随意
     runs-on: ubuntu-latest # 运行环境
+    # container:
     steps: # 运行步骤
       - name: Checkout  ️ # 步骤名字随意
         uses: actions/checkout@v3 # 使用第三方action#，将代码拉取到虚拟机
@@ -17,6 +18,7 @@ jobs:
       - name: Install and Build # 步骤名字随意
         run: | 
           echo hello world
+          node -v
           npm install
           npm run build
 
