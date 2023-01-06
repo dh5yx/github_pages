@@ -1,5 +1,5 @@
-name: CI # 工作流的名称，随意
-run-name: run CI github_pages # 工作流生成的工作流运行的名称,缺省时为commit信息，不必须
+name: run CI github_pages # 工作流的名称，随意
+# run-name: run CI github_pages # 工作流生成的工作流运行的名称,缺省时为commit信息，不必须
 on: # 触发条件
   push:
     branches:
@@ -9,7 +9,7 @@ on: # 触发条件
 jobs:
   build-and-deploy: # 任务名字随意
     runs-on: ubuntu-latest # 运行环境
-    # container: # 指定运行容器
+    # container: # 指定运行容器，我这里指定后会报错，不知道原因
     #   image: node:16 # 指定node版本 
     steps: # 运行步骤
       - name: Checkout  ️ # 步骤名字随意
