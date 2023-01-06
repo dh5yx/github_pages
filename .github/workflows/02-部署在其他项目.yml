@@ -5,7 +5,7 @@ on: # 触发条件
     branches:
       - main # 这里只配置了main分支，所以只有推送main分支才会触发以下任务
     paths:
-      - src/* # 分支下下的scr里面的文件发生变化触发，不必须
+      - 'src/*' # 分支下下的scr里面的文件发生变化触发
 jobs:
   build-and-deploy: # 任务名字随意
     runs-on: ubuntu-latest # 运行环境
