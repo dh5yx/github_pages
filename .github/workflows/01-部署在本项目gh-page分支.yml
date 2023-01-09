@@ -14,8 +14,8 @@ jobs:
     steps: # 运行步骤
       - name: Checkout  ️ # 步骤名字随意
         uses: actions/checkout@v3 #                                                                                          b  使用第三方action#，将代码拉取到虚拟机
-      - name: Set Node.js
-        uses: actions/setup-node@v1
+      - name: Set Node.js 
+        uses: actions/setup-node@v1 # 使用第三方action 安装node，可以不用，环境有默认node，如果项目需要指定node则需要此步骤
         with: 
           node-version: 14
       # 安装依赖、打包，如果提前已打包好无需这一步
