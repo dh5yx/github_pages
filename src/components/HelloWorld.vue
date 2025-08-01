@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <button @click="readIcCard">readIcCard读卡</button>
+    <button @click="readIcCard">readIcCard读卡2</button>
     <div class="order-item" v-for="item in 6" :key="item">
       <!-- 订单顶部 -->
       <div class="order-header">
